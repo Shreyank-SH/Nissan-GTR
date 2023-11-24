@@ -1,0 +1,111 @@
+nav {
+    position: fixed;
+    width: 99%;
+    z-index: 1;
+}
+nav ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #bb1ab6;
+    }    
+nav li {
+    font-size: 20px;
+    float: right;
+}
+      
+nav li a {
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+      
+nav li a:hover {
+    background-color: #111;
+}
+
+h1 {
+    text-align: center;
+}
+
+#gallery1 img {
+    width: 99%;
+    height: 700px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+img {
+    width: 50%;
+    height: 700px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+}
+      
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFAOO_ri8qWlvqEwnzlPhQfBBYc6IgCB8SZA&usqp=CAU');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    text-align-last: center;
+}
+
+p {
+    text-align-last: center;
+}
+
+#about p {
+    font-size: large;
+    text-align-last: left;
+    padding-left: 260px;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 50%;
+}
+      
+th {
+    padding: 8px;
+    background-color: #333;
+    text-align: left;
+    color: white;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+td {
+    padding: 8px;
+    background-color: #1e1e1e;
+    text-align-last:left;
+    border-bottom: 1px solid #ddd;
+}
+
+.t2{
+    height:100px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    padding: 4px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #ddd;
+    width:200px;
+    text-align:center;
+}
+
+a {
+    color: white;
+}
+#contact label {
+    text-align: left;
+}

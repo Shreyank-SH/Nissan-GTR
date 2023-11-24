@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nissan GTR R34-Booking</title>
+        <link rel="stylesheet" href="MKN_assignment2_shreyank_sh.css">
+    </head>
+    <body>
+    <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Back to Home Page</a></li>
+	  </ul>
+    </nav>
+    </header>
+        <br><br><br><br>
+        <p style="color:#bb1ab6; font-size:50px;text-align:center">Nissan Skyline GT-R</p>
+        <p style="color:#bb1ab6; font-size:40px">Booking Form</p>
+        <form>
+
+			<div class="form-group">
+				<label for="name">Full Name:</label>
+				<input type="text" id="name" name="name" required>
+				<span class="error" id="name-error"></span>
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email Id:</label>
+				<input type="email" id="email" name="email" required>
+				<span class="error" id="email-error"></span>
+			</div>
+
+			<div class="form-group">
+				<label for="phone">Phone Number:</label>
+				<input type="tel" id="phoneval" name="phone">
+				<span class="error" id="phone-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="DOB">Date of Birth:</label>
+				<input type="date" id="DOB" name="DOB">
+			</div>
+
+			<div class="form-group">
+				<label>Model:</label>
+				<div>
+					<label for="Standard Segment">
+						<input type="radio" id="Standard Segment" name="segment" value="Standard Segment">
+						Standard Segment <i>&nbsp; &nbsp;68,504,000 INR </i> <br>
+					  </label>
+					  <label for="Mid Segment">
+						<input type="radio" id="Mid Segment" name="segment" value="Mid Segment">
+						Mid Segment<i>&nbsp; &nbsp;102,756,000 INR </i> <br>
+					  </label>
+					  <label for="Top End Segment">
+						<input type="radio" id="Top End Segment" name="segment" value="Top End Segment">
+						Top End Segment	 <i>&nbsp; &nbsp;17,126,4500 INR  </i>
+					  </label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="address">Address:</label>
+				<textarea id="address" name="address"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="country">Country:</label>
+				<select id="country" name="country">
+					<option value="" disabled selected>Select Country</option>
+					<option value="India">India</option>
+					<option value="USA">USA</option>
+					<option value="Canada">Canada</option>
+					<option value="Mexico">Mexico</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Gender:</label>
+				<div class="radio-group">
+					<label for="male">
+						<input type="radio" id="male" name="gender" value="male">
+						Male
+					</label>
+					<label for="female">
+						<input type="radio" id="female" name="gender" value="female">
+						Female
+					</label>
+					<label for="other">
+						<input type="radio" id="other" name="gender" value="other">
+						Other
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="agree">Agree to Company Terms and conditions:</label>
+				<input style="margin-top: -20px;" type="checkbox" id="agree" name="agree" required>
+			</div>
+
+			<button type="submit" id="submit-btn">Submit</button>
+
+		</form>
+    <div id="output">
+	</div>
+
+<script>
+function handleSubmit(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phoneNumber = document.getElementById('phoneval').value;
+  const DOB = document.getElementById('DOB').value;
+  const address = document.getElementById('address').value;
+  const gender = document.querySelector('input[name="gender"]:checked');
+  const country = document.getElementById('country').value;
+  const agree = document.getElementById('agree').checked;
+  var choice=""
+  var totalPrice=0
+
+  function validateEmail(email) {
+    const emailRegex = /\S+@\S+\.\S+/;
+    return emailRegex.test(email);
+  }
+
+  function validatePhoneNumber(phoneNumber) {
+    const phoneRegex = /^(\+\d{1,3})?-?\d{10}$/;
+    return phoneRegex.test(phoneNumber);
+  }
+
+  if (!validateEmail(email)) {
+    document.getElementById('email-error').innerHTML = 'Please enter a valid email address';
+    return false;
+  } else {
+    document.getElementById('email-error').innerHTML = '';
+  }
+  if (!validatePhoneNumber(phoneNumber)) {
+    document.getElementById('phone-error').innerHTML = 'Please enter a valid phone number';
+    return false;
+  } else {
+    document.getElementById('phone-error').innerHTML = '';
+  }
+  if(document.getElementById("Standard Segment").checked==true){
+		totalPrice = 68504000;
+		choice = " Standard Segment Nissan GTR R34"
+  }
+
+  if(document.getElementById("Mid Segment").checked==true){
+		totalPrice = 102756000;
+		choice = " Mid Segment Nissan GTR R34"
+  }
+
+  if(document.getElementById("Top End Segment").checked==true){
+		totalPrice = 171264500;
+		choice = " Top End Segment Nissan GTR R34"
+  }
+  const output = document.getElementById('output');
+  output.className="container"
+  output.innerHTML = `
+  	<br><br><br>
+	<p style="text-align:center;">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+	<p style="text-align:center;"><strong>Your Details:</strong></p>
+	<p style="text-align:center;"><strong>Full Name:</strong> ${name}</p>
+    <p style="text-align:center;"><strong>Email ID:</strong> ${email}</p>
+    <p style="text-align:center;"><strong>Phone Number:</strong> ${phoneNumber}</p>
+    <p style="text-align:center;"><strong>Date of Birth:</strong> ${DOB}</p>
+    <p style="text-align:center;"><strong>Address:</strong> ${address}</p>
+    <p style="text-align:center;"><strong>Gender:</strong> ${gender ? gender.value : ''}</p>
+    <p style="text-align:center;"><strong>Country:</strong> ${country}</p>
+    <p style="text-align:center;"><strong>Agree to Terms:</strong> ${agree ? 'Yes' : 'No'}</p>
+	<h1><strong>Your Selection: </strong> ${choice}</h1>
+	<h1><strong>Total Price: </strong> ${totalPrice}</h1>
+  `;
+}
+
+document.getElementById('submit-btn').addEventListener('click', handleSubmit);
+
+let currentDate = new Date();
+let bookingDetails = "Details of the items booked...";
+document.getElementById("myButton").addEventListener("click", function() {
+  alert("Booking Date: " + currentDate.toLocaleDateString() + "\n" + bookingDetails);
+});
+	</script>
+    </body>
+</html>
