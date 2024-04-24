@@ -1,10 +1,11 @@
 # Nissan GTR R34 Website
 
-This project is a website dedicated to the iconic Nissan GTR R34, a legendary sports car known for its power and performance. The website provides detailed information about the car's history, specifications, reviews, and a gallery showcasing its stunning design.
+This project is a website dedicated to the iconic Nissan GTR R34, a legendary sports car known for its power and performance. The website provides detailed information about the car's history, specifications, reviews, and a gallery showcasing its stunning design. It also includes a dummy booking page where users can fill out a form to book their desired trim level of the Nissan GTR R34.
 
 ## Features
 
 - **Home Page**: The home page features a captivating video of the Nissan GTR R34 in action, along with sections detailing the car's history, specifications, reviews, and a gallery.
+- **Specifications**: A dedicated section showcasing the technical specifications of the Nissan GTR R34, including engine details, power, torque, transmission, brakes, wheels, top speed, and acceleration.
 - **Booking Page**: The booking page allows visitors to book their desired trim level of the Nissan GTR R34. Users can fill out a form with their personal details, select the trim level, and submit their booking.
 - **Responsive Design**: The website is designed to be fully responsive, ensuring an optimal viewing experience across different devices and screen sizes.
 - **Navigation Menu**: The navigation menu is fixed at the top of the page, providing easy access to different sections of the website.
